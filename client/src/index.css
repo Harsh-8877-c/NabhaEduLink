@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(220, 45%, 7%);
+  --foreground: hsl(210, 40%, 95%);
+  --card: hsl(220, 38%, 12%);
+  --card-foreground: hsl(210, 40%, 95%);
+  --popover: hsl(220, 45%, 7%);
+  --popover-foreground: hsl(210, 40%, 95%);
+  --primary: hsl(178, 100%, 42%);
+  --primary-foreground: hsl(220, 45%, 7%);
+  --secondary: hsl(215, 25%, 18%);
+  --secondary-foreground: hsl(210, 40%, 95%);
+  --muted: hsl(215, 20%, 40%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(32, 95%, 70%);
+  --accent-foreground: hsl(220, 45%, 7%);
+  --destructive: hsl(0, 75%, 60%);
+  --destructive-foreground: hsl(210, 40%, 95%);
+  --border: hsl(215, 25%, 18%);
+  --input: hsl(215, 25%, 18%);
+  --ring: hsl(178, 100%, 42%);
+  --chart-1: hsl(178, 100%, 42%);
+  --chart-2: hsl(159, 78%, 36%);
+  --chart-3: hsl(32, 95%, 70%);
+  --chart-4: hsl(147, 78%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(220, 38%, 12%);
+  --sidebar-foreground: hsl(210, 40%, 95%);
+  --sidebar-primary: hsl(178, 100%, 42%);
+  --sidebar-primary-foreground: hsl(220, 45%, 7%);
+  --sidebar-accent: hsl(215, 25%, 18%);
+  --sidebar-accent-foreground: hsl(210, 40%, 95%);
+  --sidebar-border: hsl(215, 25%, 18%);
+  --sidebar-ring: hsl(178, 100%, 42%);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 8px;
+  --shadow-2xs: 0px 2px 0px 0px hsl(178, 100%, 42%, 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(178, 100%, 42%, 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(178, 100%, 42%, 0.00), 0px 1px 2px -1px hsl(178, 100%, 42%, 0.00);
+  --shadow: 0px 2px 0px 0px hsl(178, 100%, 42%, 0.00), 0px 1px 2px -1px hsl(178, 100%, 42%, 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(178, 100%, 42%, 0.00), 0px 2px 4px -1px hsl(178, 100%, 42%, 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(178, 100%, 42%, 0.00), 0px 4px 6px -1px hsl(178, 100%, 42%, 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(178, 100%, 42%, 0.00), 0px 8px 10px -1px hsl(178, 100%, 42%, 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(178, 100%, 42%, 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.light {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 25%, 8%);
+  --card: hsl(180, 7%, 97%);
+  --card-foreground: hsl(210, 25%, 8%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 25%, 8%);
+  --primary: hsl(178, 100%, 42%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 25%, 8%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(240, 2%, 90%);
+  --muted-foreground: hsl(210, 25%, 8%);
+  --accent: hsl(32, 95%, 70%);
+  --accent-foreground: hsl(210, 25%, 8%);
+  --destructive: hsl(356, 91%, 54%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(201, 30%, 91%);
+  --input: hsl(200, 23%, 97%);
+  --ring: hsl(178, 100%, 42%);
+  --chart-1: hsl(178, 100%, 42%);
+  --chart-2: hsl(159, 78%, 36%);
+  --chart-3: hsl(32, 95%, 70%);
+  --chart-4: hsl(147, 78%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(180, 7%, 97%);
+  --sidebar-foreground: hsl(210, 25%, 8%);
+  --sidebar-primary: hsl(178, 100%, 42%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(201, 30%, 91%);
+  --sidebar-accent-foreground: hsl(178, 100%, 42%);
+  --sidebar-border: hsl(201, 30%, 91%);
+  --sidebar-ring: hsl(178, 100%, 42%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .offline-indicator {
+    animation: pulse 2s infinite;
+  }
+  
+  .voice-active {
+    animation: voicePulse 1s infinite;
+  }
+  
+  .progress-ring {
+    transform: rotate(-90deg);
+  }
+  
+  .slide-enter {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  .slide-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .badge-phulkari {
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+  }
+
+  .badge-bhangra {
+    background: linear-gradient(45deg, #48dbfb, #0abde3);
+  }
+
+  .badge-kisan {
+    background: linear-gradient(45deg, #7bed9f, #70a1ff);
+  }
+
+  .lesson-card-hover {
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+  }
+
+  .lesson-card-hover:hover {
+    border-color: hsl(var(--primary) / 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px hsl(var(--background) / 0.3);
+  }
+}
+
+@layer utilities {
+  .animate-voice-pulse {
+    animation: voicePulse 1s infinite;
+  }
+
+  .animate-progress-ring {
+    animation: progressRing 2s ease-in-out;
+  }
+}
+
+@keyframes voicePulse {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: scale(1.1); 
+    opacity: 0.8; 
+  }
+}
+
+@keyframes progressRing {
+  0% { 
+    stroke-dashoffset: 176; 
+  }
+  100% { 
+    stroke-dashoffset: 0; 
+  }
+}

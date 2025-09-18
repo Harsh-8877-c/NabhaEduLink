@@ -1,0 +1,113 @@
+Required Features for Nabha Rural Digital Learning App
+
+User Onboarding & Profiles
+
+Student registration at first login (name, roll no, class, school, contact).
+
+Student profile in navbar → shows personal info, progress, assignments.
+
+Teacher/Admin registration & login with email + password + JWT auth.
+
+Student login with class + roll no + PIN or QR.
+
+Multilingual Content (Full Parity)
+
+Lessons available in Punjabi, Hindi, English, Telugu (expandable).
+
+Switching language changes all content + UI instantly.
+
+Same lesson must be consistent across all languages.
+
+Content Library
+
+Lessons, quizzes, interactive components (MCQs, drag-drop, fill-in).
+
+Video/audio with captions + transcripts in all supported languages.
+
+Content downloadable for offline use.
+
+Digital Literacy Modules
+
+Tutorials: typing basics, file management, safe internet.
+
+Mini-games: phishing email identification, strong password creation.
+
+Teacher Dashboard
+
+Real-time student progress auto-updates after submissions.
+
+Per-student view + class-level analytics.
+
+Assignment creation, distribution, grading.
+
+CSV export.
+
+Offline-First & Sync
+
+Lessons, answers, and progress stored in IndexedDB.
+
+Background sync with server when connectivity resumes.
+
+Idempotent APIs to accept batch progress/events.
+
+Gamification
+
+Local-culture badges (Phulkari Badge, Bhangra Star, Kisan Champion).
+
+Class-level leaderboards (not global).
+
+Voice-based Learning & Navigation
+
+Students can listen to lessons in native language.
+
+Voice commands like “Start Lesson 3” → opens lesson.
+
+Parental Engagement
+
+Weekly SMS/WhatsApp updates in local language:
+
+Example: “Your child completed 3 lessons this week 🎉”.
+
+Admin Portal
+
+Manage schools, teachers, students, and content approvals.
+
+Bulk upload of users.
+
+Audit logs for admin actions.
+
+Analytics & Reporting
+
+Progress heatmap, sparklines, mastery charts.
+
+Content usage reports.
+
+Exportable in CSV.
+
+Accessibility & Optimization
+
+WCAG AA compliance (high contrast, large tap targets).
+
+Dark theme with unique palette (#0B1020 background, #00D4CF teal, #FFB86B gold).
+
+Optimized for low-end devices: lazy load, image compression, <200 KB bundle.
+
+Security
+
+JWT authentication (teachers/admins).
+
+PIN/QR login for students.
+
+TLS everywhere.
+
+Role-based access control.
+
+Emergency/Safety Mode
+
+“Alert Teacher” button in student app → sends instant notification.
+
+Database Integration (Spring Boot + PostgreSQL)
+
+All data stored centrally with migrations (Liquibase/Flyway).
+
+Real-time update from student → teacher dashboard auto refresh.
